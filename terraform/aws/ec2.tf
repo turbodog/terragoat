@@ -94,6 +94,13 @@ resource "aws_security_group" "web-node" {
     cidr_blocks = [
     "0.0.0.0/0"]
   }
+  ingress {
+    from_port = 3389
+    to_port   = 3389
+    protocol  = "tcp"
+    cidr_blocks = [
+    "0.0.0.0/0"]
+  }
   egress {
     from_port = 0
     to_port   = 0
@@ -103,12 +110,12 @@ resource "aws_security_group" "web-node" {
   }
   depends_on = [aws_vpc.web_vpc]
   tags = {
-    git_commit           = "d68d2897add9bc2203a5ed0632a5cdd8ff8cefb0"
+    git_commit           = "22cb8e35e5dbd29daebab666c9ee43b470ac3f33"
     git_file             = "terraform/aws/ec2.tf"
-    git_last_modified_at = "2020-06-16 14:46:24"
-    git_last_modified_by = "nimrodkor@gmail.com"
-    git_modifiers        = "nimrodkor"
-    git_org              = "bridgecrewio"
+    git_last_modified_at = "2021-11-30 21:31:34"
+    git_last_modified_by = "lindsey.smith@gmail.com"
+    git_modifiers        = "lindsey.smith/nimrodkor"
+    git_org              = "turbodog"
     git_repo             = "terragoat"
     yor_trace            = "b7af1b40-64eb-4519-a1a0-ab198db4b193"
   }
