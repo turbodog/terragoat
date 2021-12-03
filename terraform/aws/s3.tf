@@ -68,6 +68,9 @@ resource "aws_s3_bucket" "financials" {
       }
     }
   }
+  versioning {
+    enabled = true
+  }
 }
 
 resource "aws_s3_bucket" "operations" {
